@@ -1,0 +1,39 @@
+﻿@model List<Teacher>
+
+<div class="text-center">
+    <h1>Maestros</h1>
+</div>
+<br />
+<br />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Edad</th>
+            <th scope="col">Telefono</th>
+            <th scope="col">Carnet</th>
+            <th scope="col">Años en el colegio</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var maestros in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(m=>maestros.IdTeacher)</td>
+                <td>@Html.DisplayFor(m=>maestros.NameTeacher)</td>
+                <td>@Html.DisplayFor(m=>maestros.Age)</td>
+                <td>@Html.DisplayFor(m=>maestros.Phone)</td>
+                <td>@Html.DisplayFor(m=>maestros.Carnet)</td>
+                <td>@Html.DisplayFor(m=>maestros.YearsSchool)</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p>
+    <div class="text-center mt-10">
+        <a asp-action="CreateHero">Create Hero</a>
+    </div>
+</p>

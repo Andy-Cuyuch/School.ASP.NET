@@ -1,0 +1,51 @@
+﻿@using SchoolLand.Models.ViewModels
+@model StudentsViewModels
+
+<form asp-action="Create">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label asp-for="NameStudent" for="validationDefault01">Nombre</label>
+      <input asp-for="NameStudent" Lastname type="text" class="form-control" id="validationDefault01" placeholder="First name" value="Mark" required>
+      <span asp-validation-for="NameStudent"></span>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label asp-for="Lastname" for="validationDefault02">Apellido</label>
+      <input asp-for="Lastname"  type="text" class="form-control" id="validationDefault02" placeholder="Last name" value="Otto" required>
+      <span asp-validation-for="NameStudent"></span>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label asp-for="Correo" for="validationDefaultUsername">Correo</label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+        </div>
+        <input asp-for="Correo" type="text" class="form-control" id="validationDefaultUsername" placeholder="Username" aria-describedby="inputGroupPrepend2" required>
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col-md-3 mb-3">
+      <label asp-for="Carnet" for="validationDefault04">Carnet</label>
+      <input asp-for="Carnet" type="text" class="form-control" id="validationDefault04" placeholder="State" required>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label asp-for="Pass" for="validationDefault05">Contraseña</label>
+      <input asp-for="Pass"  type="text" class="form-control" id="validationDefault05" placeholder="Zip" required>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+      <label class="form-check-label" for="invalidCheck2">
+        Agree to terms and conditions
+      </label>
+    </div>
+  </div>
+  <button class="btn btn-primary" type="submit">Submit form</button>
+</form>
+
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

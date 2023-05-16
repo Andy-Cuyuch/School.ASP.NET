@@ -1,0 +1,40 @@
+﻿@model List<Student>
+
+
+<div class="text-center">
+    <h1>Estudiantes</h1>
+</div>
+<br/>
+<br/>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Carnet</th>
+            <th scope="col">Correo</th>
+            <th scope="col">Pass</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var students in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(m=>students.StudentId)</td>
+                <td>@Html.DisplayFor(m=>students.NameStudent)</td>
+                <td>@Html.DisplayFor(m=>students.Lastname)</td>
+                <td>@Html.DisplayFor(m=>students.Carnet)</td>
+                <td>@Html.DisplayFor(m=>students.Correo)</td>
+                <td>@Html.DisplayFor(m=>students.Pass)</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p>
+    <div class="text-center mt-10">
+        <a asp-action="Create">Create</a>
+    </div>
+</p>
